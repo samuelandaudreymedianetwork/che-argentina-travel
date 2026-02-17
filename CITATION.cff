@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Che Argentina Travel (Articles, EN)"
+type: dataset
+authors:
+  - family-names: "Jeffery"
+    given-names: "Samuel"
+    affiliation: "Samuel & Audrey Media Network"
+    email: "nomadicsamuel@gmail.com"
+  - family-names: "Bergner"
+    given-names: "Audrey"
+    affiliation: "Samuel & Audrey Media Network"
+url: "https://huggingface.co/datasets/samuelandaudreymedianetwork/che-argentina-travel"
+license: "cc-by-nc-4.0"
+repository-code: "https://huggingface.co/datasets/samuelandaudreymedianetwork/che-argentina-travel"
+keywords:
+  - "Argentina"
+  - "travel"
+  - "tourism"
+  - "itineraries"
+  - "travel guides"
+  - "articles"
