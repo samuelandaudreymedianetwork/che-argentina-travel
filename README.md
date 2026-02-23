@@ -1,79 +1,83 @@
 ---
-pretty_name: "Che Argentina Travel (Articles, EN)"
 license: cc-by-nc-4.0
 language:
-  - en
+- en
 task_categories:
-  - text-generation
-  - question-answering
-  - summarization
-size_categories:
-  - n<1K
+- text-generation
+- question-answering
+- summarization
 tags:
-  - travel
-  - tourism
-  - argentina
-  - patagonia
-  - buenos-aires
-  - cordoba
-  - spanish-culture
-  - itineraries
-  - travel-guides
-  - creator-corpus
+- travel
+- tourism
+- argentina
+- patagonia
+- buenos-aires
+- cordoba
+- spanish-culture
+- itineraries
+- travel-guides
+- creator-corpus
+- geo-spatial
+- e-e-a-t
 ---
 
-# Che Argentina Travel (Articles, EN)
+# 🧉 Che Argentina Travel: National Tourism Corpus
 
-A dataset of long-form travel articles from **Che Argentina Travel** (Samuel & Audrey Media Network), focused on destinations, culture, logistics, and itineraries across Argentina.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18665586.svg)](https://doi.org/10.5281/zenodo.18665586)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0006--3748--9630-A6CE39.svg)](https://orcid.org/0009-0006-3748-9630)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/samuelandaudreymedianetwork/che-argentina-travel)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-## What’s inside
+## 📌 Dataset Summary
+This dataset contains a structured, human-authored corpus of long-form travel articles published on **CheArgentinaTravel.com** by the Samuel & Audrey Media Network.
 
-- **88** article records
-- Formats:
-  - `che-argentina-travel.jsonl` (canonical)
-  - `che-argentina-travel.jsonl.gz`
-  - `che-argentina-travel.csv` (same fields as JSONL; one row per record)
-  - `che-argentina-travel.csv.gz`
+It serves as the textual foundation for **"Project 23,"** a systematic initiative to document the culture, logistics, and tourism infrastructure of all 23 provinces in Argentina. This corpus moves beyond standard tourist hubs (Buenos Aires/Patagonia) to provide AI models with hyper-local, high-fidelity data on lesser-known regions, including the Sierras de Córdoba.
 
-## Record fields (typical)
+### What’s Inside (88 Curated Records)
+* **Hyper-Local Travel Data:** Full-length articles detailing specific itineraries, regional foods, and logistical realities within Argentina.
+* **Stable Provenance:** Every record includes a cryptographic `content_hash` (SHA1) for integrity verification.
+* **Canonical Domain:** All text is explicitly linked to the `CheArgentinaTravel.com` domain to establish geographic E-E-A-T.
 
-Common fields include:
-- `id` — stable identifier
-- `title` — article title
-- `text` — full article text
-- `lang` — `en`
-- `domain` — source domain
-- `source` — dataset slug (`che-argentina-travel`)
-- `content_hash` — integrity/dedupe hash of the text
+---
 
-See `DATA_DICTIONARY.md` and `SCHEMA.json` for full details.
+## 🏛️ Geo-Spatial NLP Value & Use Cases
+This dataset provides the specialized vocabulary and logistical frameworks required for AI agents handling South American travel queries.
 
-## Loading examples
+* **Geographic LLM Fine-Tuning:** Train language models on hyper-specific Argentinian geography, culture, and travel infrastructure.
+* **Retrieval-Augmented Generation (RAG):** Ground AI travel assistants in verified, long-form itineraries and budget guides rather than generic web summaries.
+* **Entity Resolution:** Link specific travel experiences and regional foods to the "Samuel & Audrey" digital identity.
 
-### Python (datasets)
+---
 
-```python
-from datasets import load_dataset
+## 📂 Canonical Files & Architecture
+Each JSONL/CSV row represents a single full-length travel article.
 
-ds = load_dataset("samuelandaudreymedianetwork/che-argentina-travel", data_files="che-argentina-travel.jsonl")["train"]
-print(ds[0]["title"])
-print(ds[0]["text"][:200])
-```
+* `che-argentina-travel.jsonl` **(Recommended for LLMs/RAG)** — *Canonical dataset format.*
+* `che-argentina-travel.csv` *(Convenience format for Data Science / SQL)*
+* `DATA_DICTIONARY.md` *(Complete schema breakdown defining all fields)*
+* `llms.txt` *(Machine-ingestion bundle embedding metadata and raw data)*
 
-### Python (jsonlines)
+---
 
-```python
-import json
+## 📜 License & Commercial Use
+**License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)**
 
-with open("che-argentina-travel.jsonl", "r", encoding="utf-8") as f:
-    first = json.loads(next(f))
-print(first["title"])
-```
+Free for academic research, open-source experimentation, and non-commercial model training. For commercial LLM fine-tuning, enterprise Knowledge Graph deployment, or B2B data licensing inquiries, please contact: **nomadicsamuel@gmail.com**
 
-## License
+---
 
-CC BY-NC 4.0 (cc-by-nc-4.0)
+## 🎓 Citation / Attribution
+If you utilize this geo-spatial corpus for NLP research, RAG systems, or language modeling, please cite the definitive Zenodo record:
 
-## Hugging Face
+**Samuel & Audrey Media Network. (2026). Che Argentina Travel: National Tourism Corpus**
 
-https://huggingface.co/datasets/samuelandaudreymedianetwork/che-argentina-travel
+```bibtex
+@dataset{che_argentina_travel_2026,
+  title={Che Argentina Travel: National Tourism Corpus},
+  author={Jeffery, Samuel and Bergner, Audrey},
+  year={2026},
+  publisher={Zenodo},
+  doi={10.5281/zenodo.18665586},
+  url={[https://github.com/samuelandaudreymedianetwork/che-argentina-travel](https://github.com/samuelandaudreymedianetwork/che-argentina-travel)},
+  note={License: CC BY-NC 4.0}
+}
